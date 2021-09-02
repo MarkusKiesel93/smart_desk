@@ -8,12 +8,11 @@ class Config(BaseSettings):
     cors_allowed_headers = ['*']
 
     gpio_mode = GPIO.BCM
-    pin_power_left = 5
-    pin_power_right = 6
-    pin_polarity_pos_left = 13
-    pin_polarity_neg_left = 19
-    pin_polarity_pos_right = 16
-    pin_polarity_neg_right = 20
+    pin_power_supply: int = 21
+    pin_power_left: int = 5
+    pin_power_right: int = 6
+    pin_polarity_left: List[int] = [13, 19]
+    pin_polarity_right: List[int] = [16, 20]
 
 
 config = Config()
