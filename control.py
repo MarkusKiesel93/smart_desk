@@ -5,7 +5,6 @@ from config import config
 
 # todo: change exceptions to logging
 
-test_time = 10
 
 class Control():
     def __init__(self):
@@ -27,20 +26,18 @@ class Control():
             self._pin_on(pin)
         sleep(self.waiting_time)
         self._power_on()
-        sleep(test_time)
-        self._power_off()
-        for pin in config.pins_polarity_left:
-            self._pin_off(pin)
-        for pin in config.pins_polarity_right:
-            self._pin_off(pin)
-        self._teardown()
 
     def down(self):
         self._pin_on(config.pin_power_supply)
         sleep(self.waiting_time)
         self._power_on()
-        sleep(test_time)
+    
+    def stop(self):
         self._power_off()
+        for pin in config.pins_polarity_left:
+            self._pin_off(pin)
+        for pin in config.pins_polarity_right:
+            self._pin_off(pin)
         self._teardown()
 
     def _power_on(self):
