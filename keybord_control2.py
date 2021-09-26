@@ -21,7 +21,7 @@ try:
                 print('CANCEL')
                 control.stop()
                 break
-            if e == '<W>':
+            if e == 'w':
                 print('LEFT UP')
                 for pin in config.pins_polarity_left:
                     control._pin_on(pin)
@@ -29,12 +29,12 @@ try:
                 control._pin_on(config.pin_power_supply)
                 sleep(control.waiting_time)
                 control._pin_on(config.pin_power_left)
-            if e == '<S>':
+            if e == 's':
                 print('LEFT DOWN')
                 control._pin_on(config.pin_power_supply)
                 sleep(control.waiting_time)
                 control._pin_on(config.pin_power_left)
-            if e == '<E>':
+            if e == 'e':
                 print('RIGHT UP')
                 for pin in config.pins_polarity_right:
                     control._pin_on(pin)
@@ -42,7 +42,7 @@ try:
                 control._pin_on(config.pin_power_supply)
                 sleep(control.waiting_time)
                 control._pin_on(config.pin_power_right)
-            if e == '<D>':
+            if e == 'd':
                 print('RIGHT DOWN')
                 control._pin_on(config.pin_power_supply)
                 sleep(control.waiting_time)
