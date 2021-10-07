@@ -9,10 +9,10 @@ class Config(BaseSettings):
 
     gpio_mode = GPIO.BCM
     pin_power_supply: int = 21
-    pin_power_left: int = 5
-    pin_power_right: int = 6
-    pins_polarity_left: List[int] = [13, 19]
-    pins_polarity_right: List[int] = [16, 20]
+    pin_power_left: int = 6
+    pin_power_right: int = 5
+    pins_polarity_left: List[int] = [16, 20]
+    pins_polarity_right: List[int] = [13, 19]
 
 
 config = Config()
