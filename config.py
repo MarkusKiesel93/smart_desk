@@ -1,5 +1,6 @@
 from pydantic import BaseSettings
 import RPi.GPIO as GPIO
+from typing import List
 
 
 class Config(BaseSettings):
